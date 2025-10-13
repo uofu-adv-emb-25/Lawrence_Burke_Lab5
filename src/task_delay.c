@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <pico/stdlib.h>
-#include <FreeRTOS.h>
-#include <task.h>
+#include "pin_config.h"
 
 void main_task(__unused void *params)
 {

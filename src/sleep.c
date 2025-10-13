@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <pico/stdlib.h>
+#include "pin_config.h"
 
 int main(void)
 {

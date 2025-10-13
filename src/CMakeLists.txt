@@ -1,39 +1,44 @@
-# This is the main binary. List your C files here.
-add_executable(hello_freertos
-    hello_freertos.c
-    )
+# Executables (adjust paths if your .c files live in subfolders)
+add_executable(hello_freertos hello_freertos.c)
+add_executable(sleep        sleep.c)        # or sleep/sleep.c
+add_executable(task_delay   task_delay.c)   # or task_delay/task_delay.c
+add_executable(timer        timer.c)        # or timer/timer.c
 
-pico_set_program_name(hello_freertos "test")
-pico_set_program_version(hello_freertos "0.1")
+set(APP_TARGETS hello_freertos sleep task_delay timer)
 
-# Modify the below lines to enable/disable output over UART/USB.
-# These are mutually exclusive, only set one.
-pico_enable_stdio_uart(hello_freertos 0)
-pico_enable_stdio_usb(hello_freertos 1)
+foreach(t ${APP_TARGETS})
+  pico_set_program_name(${t} "${t}")
+  pico_set_program_version(${t} "0.1")
 
-# Add the libraries to the build
-target_link_libraries(hello_freertos PRIVATE
-  pico_stdlib
-  pico_multicore
-  pico_async_context_freertos
-  FreeRTOS-Kernel-Heap4
-)
+  pico_enable_stdio_uart(${t} 0)
+  pico_enable_stdio_usb(${t} 1)
 
-# The CYW43 is the Wifi/Bluetooth module. If the board is set to pico_w, this
-# variable will be set and the wireless libraries added.
-if(PICO_CYW43_SUPPORTED)
-    # For led support on pico_w
-    target_link_libraries(hello_freertos PRIVATE
-        pico_cyw43_arch_none
-    )
-endif()
+  target_link_libraries(${t} PRIVATE
+    pico_stdlib
+    pico_multicore
+    pico_async_context_freertos
+    FreeRTOS-Kernel-Heap4
+  )
 
-# Another pico macro which generates the uf2 file in addition to the elf
-pico_add_extra_outputs(hello_freertos)
+  if(PICO_CYW43_SUPPORTED)
+    target_link_libraries(${t} PRIVATE pico_cyw43_arch_none)
+  endif()
+
+  pico_add_extra_outputs(${t})
+endforeach()
 
 find_program(OPENOCD openocd)
 find_program(PICOTOOL picotool)
 
-add_custom_target(flash ${PICOTOOL} load -f $<TARGET_FILE:hello_freertos> DEPENDS hello_freertos)
+foreach(t ${APP_TARGETS})
+  if(PICOTOOL)
+    add_custom_target(flash_${t} ${PICOTOOL} load -f $<TARGET_FILE:${t}> DEPENDS ${t})
+  endif()
 
-add_custom_target(openocd_flash ${OPENOCD} -s ${OPENOCD_PATH} -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c 'adapter speed 5000; program "$<TARGET_FILE:hello_freertos>" verify reset exit' DEPENDS hello_freertos)
+  if(OPENOCD)
+    add_custom_target(openocd_flash_${t}
+      ${OPENOCD} -s ${OPENOCD_PATH} -f interface/cmsis-dap.cfg -f target/rp2040.cfg
+      -c "adapter speed 5000; program \"$<TARGET_FILE:${t}>\" verify reset exit"
+      DEPENDS ${t})
+  endif()
+endforeach()

@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <pico/stdlib.h>
-#include <pico/sync.h>
+#include "pin_config.h"
 
 int toggle = 1;
 bool timer_callback(__unused struct repeating_timer *t)
