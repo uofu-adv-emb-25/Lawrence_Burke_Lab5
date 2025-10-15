@@ -22,8 +22,9 @@ This lab measures the accuracy, drift, jitter, and latency of different timekeep
 | Task_Delay    | 0.001% | Faster | 3 ns |
 | Timer         | 0.001% | Faster | 3 ns |
 
-*Insert oscilloscope screenshot showing stable waveform and jitter statistics here.*
-
+![Alt text](images/sleep_woutbusyloop.png)
+![Alt text](images/task_woutbusyloop.png)
+![Alt text](images/timer_woutbusyloop.png)
 ---
 
 ### 2. With Busy-Wait Delay
