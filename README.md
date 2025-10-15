@@ -6,8 +6,7 @@ This lab measures the accuracy, drift, jitter, and latency of different timekeep
 
 ## Objective
 - Compare the precision of sleep, task_delay, and timer-based delays.
-- Quantify drift over one hour and jitter using the oscilloscope’s statistical measurements.
-- Observe how busy-wait loops affect real-time behavior.
+- Quantify drift over one hour and jitter using the oscilloscope’s statistical measurements.- Observe how busy-wait loops affect real-time behavior.
 - Measure GPIO interrupt latency using the oscilloscope.
 
 ---
@@ -22,9 +21,10 @@ This lab measures the accuracy, drift, jitter, and latency of different timekeep
 | Task_Delay    | 0.001% | Faster | 3 ns |
 | Timer         | 0.001% | Faster | 3 ns |
 
-![Alt text](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/tree/dev/images/sleep_woutbusyloop.png)
-![Alt text](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/tree/dev/images/task_woutbusyloop.png)
-![Alt text](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/tree/dev/images/timer_woutbusyloop.png)
+![Sleep without Busy Loop](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/sleep_woutbusyloop.png)
+![Task without Busy Loop](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/task_woutbusyloop.png)
+![Timer without Busy Loop](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/timer_woutbusyloop.png)
+
 ---
 
 ### 2. With Busy-Wait Delay
