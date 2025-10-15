@@ -3,8 +3,9 @@ add_executable(hello_freertos hello_freertos.c)
 add_executable(sleep        sleep.c)        # or sleep/sleep.c
 add_executable(task_delay   task_delay.c)   # or task_delay/task_delay.c
 add_executable(timer        timer.c)        # or timer/timer.c
+add_executable(gpio_interrupt  gpio_interrupt.c) 
 
-set(APP_TARGETS hello_freertos sleep task_delay timer)
+set(APP_TARGETS hello_freertos sleep task_delay timer gpio_interrupt)
 
 foreach(t ${APP_TARGETS})
   pico_set_program_name(${t} "${t}")

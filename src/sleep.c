@@ -10,6 +10,7 @@ int main(void)
 
     while (true) {
         toggle = !toggle;
+        for (volatile int i = 0; i < 1000; i ++){}
         gpio_put(OUT_PIN, toggle);
         sleep_ms(DELAY_MS);
         
