@@ -40,9 +40,9 @@ This lab measures the accuracy, drift, jitter, and latency of different timekeep
 IR = “Irrelevant.” When a busy-wait loop is added, the timekeeping reference is disrupted, making jitter values meaningless relative to the intended timing source.
 
 
-![Sleep with Busy Loop](images/sleep_wbusyloop1000.PNG)
-![Task with Busy Loop](images/task_wbusyloop100000.PNG)
-![Timer with Busy Loop](images/timer_wbusyloop100000.PNG)
+![Sleep with Busy Loop](images/sleep_wbusyloop_1000.PNG)
+![Task with Busy Loop](images/task_wbusyloop_100000.PNG)
+![Timer with Busy Loop](images/timer_wbusyloop_100000.PNG)
 
 ---
 
