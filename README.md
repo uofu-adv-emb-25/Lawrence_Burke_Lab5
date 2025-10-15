@@ -53,15 +53,6 @@ IR = “Irrelevant.” When a busy-wait loop is added, the timekeeping reference
 
 ---
 
-## Drift Calculation Method
-Drift was computed by comparing the measured mean period (in milliseconds) to the ideal period of **20.000 ms** over one hour of continuous operation:
-\[
-\text{Drift (\%)} = \frac{\text{Measured Period} - 20.000}{20.000} \times 100
-\]
-This yields the normalized percentage deviation of each method relative to the ideal 20 ms reference period across one hour.
-
----
-
 ## Image Placeholders
 1. Stable 20 ms waveform (baseline)  
 2. Sleep jitter measurement  
