@@ -5,5 +5,5 @@
 #include <task.h>
 
 #define OUT_PIN 0
-#define GPIO_OUT 0
-#define DELAY_MS 500
+
+#define DELAY_MS 10
