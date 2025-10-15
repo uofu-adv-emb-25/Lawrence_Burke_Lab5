@@ -37,9 +37,12 @@ This lab measures the accuracy, drift, jitter, and latency of different timekeep
 | Task_Delay    | 100,000 | 44.44% | Slower | IR |
 | Timer         | 100,000 | 87.5% | Slower | IR |
 
-*Insert oscilloscope screenshots for each case showing drift and timing differences.*
-
 IR = “Irrelevant.” When a busy-wait loop is added, the timekeeping reference is disrupted, making jitter values meaningless relative to the intended timing source.
+
+
+![Sleep with Busy Loop](images/sleep_wbusyloop1000.PNG)
+![Task with Busy Loop](images/task_wbusyloop100000.PNG)
+![Timer with Busy Loop](images/timer_wbusyloop100000.PNG)
 
 ---
 
@@ -50,7 +53,7 @@ IR = “Irrelevant.” When a busy-wait loop is added, the timekeeping reference
 | Busy Loop Iterations | 10,000 |
 | Measured Latency (Δt) | 801 µs |
 
-*Insert oscilloscope capture showing CH1 (SYNC input) and CH2 (GPIO output) edges with measured Δt.*
+![GPIO Latency](images/busylooplatency.PNG)
 
 ---
 
