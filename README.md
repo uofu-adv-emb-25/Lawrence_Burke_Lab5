@@ -21,14 +21,9 @@ This lab measures the accuracy, drift, jitter, and latency of different timekeep
 | Task_Delay    | 0.001% | Faster | 3 ns |
 | Timer         | 0.001% | Faster | 3 ns |
 
-![Sleep without Busy Loop](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/sleep_woutbusyloop.png)
-![Task without Busy Loop](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/task_woutbusyloop.png)
-![Timer without Busy Loop](https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/timer_woutbusyloop.png)
-
-<p align="center">
-  <img width="700" alt="Sleep without Busy Loop"
-       src="https://github.com/uofu-adv-emb-25/Lawrence_Burke_Lab5/raw/dev/images/sleep_woutbusyloop.png">
-</p>
+![Sleep without Busy Loop](images/sleep_woutbusyloop.PNG)
+![Task without Busy Loop](images/task_woutbusyloop.PNG)
+![Timer without Busy Loop](images/timer_woutbusyloop.PNG)
 
 ---
 
