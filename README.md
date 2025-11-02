@@ -55,14 +55,4 @@ IR = “Irrelevant.” When a busy-wait loop is added, the timekeeping reference
 
 ![GPIO Latency](images/busylooplatency.PNG)
 
----
 
-## Image Placeholders
-1. Stable 20 ms waveform (baseline)  
-2. Sleep jitter measurement  
-3. Task_Delay jitter measurement  
-4. Timer jitter measurement  
-5. Sleep with 1,000-loop busy wait  
-6. Task_Delay with 100,000-loop busy wait  
-7. Timer with 100,000-loop busy wait  
-8. GPIO interrupt latency capture  
